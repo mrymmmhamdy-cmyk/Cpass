@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Classmates 💗</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+  text-align: center;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 60px auto;
+  width: 85%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  color: #ff4d88;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ff4d88;
+  color: white;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+#flowers {
+  font-size: 28px;
+  margin-top: 20px;
+  animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+#message {
+  margin-top: 20px;
+  color: #ff4d88;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- SCREEN 1 -->
+<div id="s1">
+  <h2>Hello dear classmate 🫶💗</h2>
+  <p>This site is done with love and care by your lovely Mrym 💖</p>
+  <div id="flowers">🌸🌷🌸🌺🌸🌼🌸🌷🌸🌺</div>
+  <button onclick="s2()">Next 💗</button>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="s2" class="hidden">
+  <h2>Wanna play a game? 🎮</h2>
+  <button onclick="yesGame()">Yes</button>
+  <button onclick="noGame()">No</button>
+  <div id="reaction"></div>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="s3" class="hidden">
+  <h2>ow hi again 💗 here is the quiz</h2>
+
+  <p>Do you think I’m a good friend?</p>
+  <button onclick="nextQ()">Yes</button>
+  <button onclick="nextQ()">No</button>
+
+  <p>Have I ever made you smile in class?</p>
+  <button onclick="nextQ()">Yes</button>
+  <button onclick="nextQ()">No</button>
+
+  <p>Do you feel we’ve grown closer this year?</p>
+  <button onclick="nextQ()">Yes</button>
+  <button onclick="nextQ()">No</button>
+
+  <p>Would you miss me if I weren’t in class next year?</p>
+  <button onclick="finalQ()">Yes</button>
+  <button onclick="finalQ()">No</button>
+</div>
+
+<!-- FINAL QUESTION -->
+<div id="s4" class="hidden">
+  <h2>Who’s the one that I love the most? 💗</h2>
+  <button onclick="showLove()">Click me 💕</button>
+</div>
+
+<!-- FINAL MESSAGE -->
+<div id="end" class="hidden">
+  <h2>Actually… all of you 💖🌸</h2>
+
+  <p id="longText">
+  heheh now a lil message to you dear classmate 💗<br><br>
+
+  just wanted to take a moment to say how truly happy I am that I got to study with all of you this year. Coming from another school, I wasn’t sure what to expect, but you all welcomed me so warmly, and it’s made this year unforgettable.<br><br>
+
+  Thank you for all the laughs, the support, and the little moments that made school so much fun. I feel really lucky to have friends like you, and I hope we carry these memories with us forever. You all have a special place in my heart, and I’ll always cherish our time together. 💖<br><br>
+
+  Here’s to the amazing year we had—and to staying connected no matter what comes next! 🌟
+  </p>
+</div>
+
+</div>
+
+<script>
+
+function s2() {
+  document.getElementById("s1").classList.add("hidden");
+  document.getElementById("s2").classList.remove("hidden");
+}
+
+function yesGame() {
+  document.getElementById("reaction").innerHTML = "oww perfect IM EXCITED 💗";
+  setTimeout(() => {
+    document.getElementById("s2").classList.add("hidden");
+    document.getElementById("s3").classList.remove("hidden");
+  }, 1000);
+}
+
+function noGame() {
+  document.getElementById("reaction").innerHTML = "HOW DARE YOU 🥺";
+}
+
+function nextQ() {
+  // just for flow, no action needed
+}
+
+function finalQ() {
+  document.getElementById("s3").classList.add("hidden");
+  document.getElementById("s4").classList.remove("hidden");
+}
+
+function showLove() {
+  document.getElementById("s4").classList.add("hidden");
+  document.getElementById("end").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
